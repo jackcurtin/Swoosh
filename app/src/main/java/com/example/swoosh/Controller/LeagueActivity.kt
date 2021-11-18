@@ -1,12 +1,12 @@
-package com.example.swoosh
+package com.example.swoosh.Controller
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import android.widget.ToggleButton
+import com.example.swoosh.EXTRA_LEAGUE
+import com.example.swoosh.R
 
 class LeagueActivity : BaseActivity() {
 
@@ -41,7 +41,7 @@ class LeagueActivity : BaseActivity() {
         mensBtn.isChecked = false
         womensBtn.isChecked = false
 
-        selectedLeague = "coed"
+        selectedLeague = "co-ed"
     }
 
     fun leagueNextClicked(view: View) {
