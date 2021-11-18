@@ -16,6 +16,10 @@ class SkillActivity : BaseActivity() {
     lateinit var beginnerSkillBtn: ToggleButton
     lateinit var ballerSkillBtn: ToggleButton
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,13 @@ class SkillActivity : BaseActivity() {
 
         beginnerSkillBtn = findViewById(R.id.beginnerSkillBtn)
         ballerSkillBtn = findViewById(R.id.ballerSkillBtn)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if(savedInstanceState != null){
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)!!
+        }
     }
 
     fun onBallerClick(view:View){
